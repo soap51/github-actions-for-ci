@@ -1,12 +1,12 @@
 const Game = require('../src/game').default
-// const fs = require('fs')
+const fs = require('fs')
 
-// describe('App', () => {
-//   it('Contains the compiled JavaScript', async () => {
-//    const data = fs.readFileSync('./public/main.js', 'utf8')
-//     expect(data).toMatchSnapshot()
-//   })
-// })
+describe('App', () => {
+  it('Contains the compiled JavaScript', async () => {
+   const data = fs.readFileSync('./public/main.js', 'utf8')
+    expect(data).toMatchSnapshot()
+  })
+})
 
 describe('Game', () => {
   let game, p1, p2
@@ -19,7 +19,7 @@ describe('Game', () => {
   describe('Game', () => {
     it('Initializes with two players', async () => {
       expect(game.p1).toBe('Salem')
-      // expect(game.p2).toBe('Nate')
+      expect(game.p2).toBe('Nate')
     })
 
     it('Initializes with an empty board', async () => {
@@ -35,7 +35,7 @@ describe('Game', () => {
       expect(new Game(p1, p2).player).toBe('Salem')
 
       Math.random = () => 0.6
-      // expect(new Game(p1, p2).player).toBe('Nate')
+      expect(new Game(p1, p2).player).toBe('Nate')
     })
   })
 
@@ -57,7 +57,7 @@ describe('Game', () => {
       const game = new Game(p1, p2)
       expect(game.player).toBe('Salem')
       game.nextPlayer()
-      // expect(game.player).toBe('Nate')
+      expect(game.player).toBe('Nate')
     })
   })
 
